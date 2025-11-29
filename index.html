@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>NBA Daily Scoreboard</title>
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --panel: #1f2833;
+      --accent: #66fcf1;
+      --muted: #c5c6c7;
+      --text: #f8f8f8;
+    }
+    * { box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; background: var(--bg); color: var(--text); }
+    header.page { padding: 2rem 1.25rem; text-align: center; border-bottom: 2px solid var(--panel); }
+    header.page h1 { margin: 0 0 0.4rem; letter-spacing: 0.05em; }
+    header.page p { margin: 0.2rem 0; color: var(--muted); }
+    main { max-width: 1100px; margin: 0 auto; padding: 1.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1rem; }
+    .game-card { background: var(--panel); border-radius: 12px; padding: 1rem; box-shadow: 0 6px 18px rgba(0,0,0,0.25); border: 1px solid rgba(102, 252, 241, 0.15); }
+    .game-card header { border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.75rem; margin-bottom: 0.75rem; }
+    .game-id { font-size: 0.75rem; color: var(--muted); margin: 0; letter-spacing: 0.04em; }
+    .status { margin: 0.1rem 0; font-weight: 600; font-size: 1.1rem; color: var(--accent); }
+    .status-extra { margin: 0; color: var(--muted); font-size: 0.9rem; }
+    .teams { display: grid; grid-template-columns: 1fr; gap: 0.4rem; }
+    .team { display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.25rem; gap: 0.75rem; }
+    .team-meta { display: flex; align-items: center; gap: 0.75rem; }
+    .team-text { display: flex; flex-direction: column; gap: 0.1rem; }
+    .team-name { margin: 0; font-weight: 600; }
+    .record { color: var(--muted); font-weight: 400; font-size: 0.85rem; margin-left: 0.35rem; }
+    .logo { margin: 0; background: rgba(255,255,255,0.03); border: 1px solid rgba(102, 252, 241, 0.2); border-radius: 8px; padding: 0.35rem 0.5rem; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; line-height: 1.1; color: var(--accent); min-width: 6ch; }
+    .score { font-size: 1.8rem; font-weight: 700; margin: 0; }
+    .leaders { margin-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.5rem; }
+    .leader { margin: 0.2rem 0; color: var(--muted); font-size: 0.95rem; }
+    .leader-label { color: var(--accent); font-weight: 600; margin-right: 0.35rem; }
+    .no-games { grid-column: 1 / -1; text-align: center; color: var(--muted); font-size: 1.05rem; }
+    footer { text-align: center; padding: 1rem; color: var(--muted); font-size: 0.9rem; }
+    @media (max-width: 560px) {
+      main { padding: 1rem; }
+      .score { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class='page'>
+    <h1>NBA Daily Scoreboard</h1>
+    <p>Game date: 2025-11-28</p>
+    <p>Updated: November 29, 2025 02:40 UTC</p>
+  </header>
+  <main>
+    <article class='game-card'><header><p class='game-id'>Game ID: 0022500072</p><p class='status'>Q4 8:33</p><p class='status-extra'>Q4 — PT08M33.00S</p></header><div class='teams'><div class='team away'><div class='team-meta'><pre class='logo' aria-label='ORL logo'>
+  ___
+ / _ \
+| | | |
+| |_| |
+ \___/
+  ORL
+</pre><div class='team-text'><p class='team-name'>Orlando Magic (ORL)<span class='record'>11-8</span></p></div></div><p class='score'>95</p></div><div class='team home'><div class='team-meta'><pre class='logo' aria-label='DET logo'>
+|\_/|
+|_ _|
+ ( )
+ |_| 
+ DET
+</pre><div class='team-text'><p class='team-name'>Detroit Pistons (DET)<span class='record'>15-3</span></p></div></div><p class='score'>85</p></div></div><div class='leaders'><p class='leader'><span class='leader-label'>DET leader:</span> Cade Cunningham — 30 PTS, 9 REB, 7 AST</p><p class='leader'><span class='leader-label'>ORL leader:</span> Desmond Bane — 34 PTS, 5 REB, 2 AST</p></div></article><article class='game-card'><header><p class='game-id'>Game ID: 0022500073</p><p class='status'>Q4 3:47</p><p class='status-extra'>Q4 — PT03M47.00S</p></header><div class='teams'><div class='team away'><div class='team-meta'><pre class='logo' aria-label='WAS logo'>
+ /\  /\
+ \ \/ /
+ /    \
+ \ /\ /
+  \/  \
+  WAS
+</pre><div class='team-text'><p class='team-name'>Washington Wizards (WAS)<span class='record'>2-15</span></p></div></div><p class='score'>84</p></div><div class='team home'><div class='team-meta'><pre class='logo' aria-label='IND logo'>
+  __
+ / _|
+| |_
+|  _|
+| |
+|_|
+ IND
+</pre><div class='team-text'><p class='team-name'>Indiana Pacers (IND)<span class='record'>2-16</span></p></div></div><p class='score'>113</p></div></div><div class='leaders'><p class='leader'><span class='leader-label'>IND leader:</span> Pascal Siakam — 24 PTS, 11 REB, 1 AST</p><p class='leader'><span class='leader-label'>WAS leader:</span> Alex Sarr — 24 PTS, 8 REB, 1 AST</p></div></article><article class='game-card'><header><p class='game-id'>Game ID: 0022500074</p><p class='status'>Q4 11:32</p><p class='status-extra'>Q4 — PT11M32.00S</p></header><div class='teams'><div class='team away'><div class='team-meta'><pre class='logo' aria-label='MIL logo'>
+  /\_/\
+ ( o.o )
+ /  V  \
+/   |   \
+ MIL
+</pre><div class='team-text'><p class='team-name'>Milwaukee Bucks (MIL)<span class='record'>8-11</span></p></div></div><p class='score'>88</p></div><div class='team home'><div class='team-meta'><pre class='logo' aria-label='NYK logo'>
+|\  |\
+| \ | \
+|  \|  \
+| |\| |
+| | \ |
+|_|  \|
+ NYK
+</pre><div class='team-text'><p class='team-name'>New York Knicks (NYK)<span class='record'>11-6</span></p></div></div><p class='score'>95</p></div></div><div class='leaders'><p class='leader'><span class='leader-label'>NYK leader:</span> Jalen Brunson — 31 PTS, 1 REB, 4 AST</p><p class='leader'><span class='leader-label'>MIL leader:</span> Giannis Antetokounmpo — 22 PTS, 12 REB, 5 AST</p></div></article><article class='game-card'><header><p class='game-id'>Game ID: 0022500069</p><p class='status'>Q4 7:56</p><p class='status-extra'>Q4 — PT07M56.00S</p></header><div class='teams'><div class='team away'><div class='team-meta'><pre class='logo' aria-label='CLE logo'>
+  ____
+ / __ \
+| |  | |
+| |__| |
+ \____/
+  CLE
+</pre><div class='team-text'><p class='team-name'>Cleveland Cavaliers (CLE)<span class='record'>12-7</span></p></div></div><p class='score'>103</p></div><div class='team home'><div class='team-meta'><pre class='logo' aria-label='ATL logo'>
+  /\__ /\
+ (  o.o  )
+  &gt;  ^  &lt;
+   ATL
+</pre><div class='team-text'><p class='team-name'>Atlanta Hawks (ATL)<span class='record'>11-8</span></p></div></div><p class='score'>111</p></div></div><div class='leaders'><p class='leader'><span class='leader-label'>ATL leader:</span> Jalen Johnson — 22 PTS, 6 REB, 8 AST</p><p class='leader'><span class='leader-label'>CLE leader:</span> Donovan Mitchell — 34 PTS, 3 REB, 3 AST</p></div></article><article class='game-card'><header><p class='game-id'>Game ID: 0022500071</p><p class='status'>Q4 5:05</p><p class='status-extra'>Q4 — PT05M05.00S</p></header><div class='teams'><div class='team away'><div class='team-meta'><pre class='logo' aria-label='CHI logo'>
+ (\_/)
+ (•ᴥ•)
+ /   \
+(_____) 
+  CHI
+</pre><div class='team-text'><p class='team-name'>Chicago Bulls (CHI)<span class='record'>9-8</span></p></div></div><p class='score'>105</p></div><div class='team home'><div class='team-meta'><pre class='logo' aria-label='CHA logo'>
+ /\ /\
+{  `  }
+ &gt; -- &lt;
+  `&quot;&quot;`
+  CHA
+</pre><div class='team-text'><p class='team-name'>Charlotte Hornets (CHA)<span class='record'>4-14</span></p></div></div><p class='score'>113</p></div></div><div class='leaders'><p class='leader'><span class='leader-label'>CHA leader:</span> Brandon Miller — 25 PTS, 4 REB, 1 AST</p><p class='leader'><span class='leader-label'>CHI leader:</span> Josh Giddey — 21 PTS, 10 REB, 9 AST</p></div></article><article class='game-card'><header><p class='game-id'>Game ID: 0022500070</p><p class='status'>Q4 8:15</p><p class='status-extra'>Q4 — PT08M15.00S</p></header><div class='teams'><div class='team away'><div class='team-meta'><pre class='logo' aria-label='PHI logo'>
+|\  /|
+| \/ |
+| /\ |
+|/  \|
+ PHI
+</pre><div class='team-text'><p class='team-name'>Philadelphia 76ers (PHI)<span class='record'>9-8</span></p></div></div><p class='score'>92</p></div><div class='team home'><div class='team-meta'><pre class='logo' aria-label='BKN logo'>
+|\    /|
+| \__/ |
+| |\/| |
+|_|  |_|
+  BKN
+</pre><div class='team-text'><p class='team-name'>Brooklyn Nets (BKN)<span class='record'>3-14</span></p></div></div><p class='score'>80</p></div></div><div class='leaders'><p class='leader'><span class='leader-label'>BKN leader:</span> Tyrese Martin — 16 PTS, 2 REB, 2 AST</p><p class='leader'><span class='leader-label'>PHI leader:</span> Tyrese Maxey — 22 PTS, 8 REB, 7 AST</p></div></article><article class='game-card'><header><p class='game-id'>Game ID: 0022500075</p><p class='status'>9:30 pm ET</p><p class='status-extra'>Tip-off: 2025-11-28T21:30:00Z</p></header><div class='teams'><div class='team away'><div class='team-meta'><pre class='logo' aria-label='PHX logo'>
+  /\
+ /  \
+| /\ |
+| \/ |
+ \__/ \
+  PHX
+</pre><div class='team-text'><p class='team-name'>Phoenix Suns (PHX)<span class='record'>12-7</span></p></div></div><p class='score'>0</p></div><div class='team home'><div class='team-meta'><pre class='logo' aria-label='OKC logo'>
+  /\
+ /__\
+| __ |
+||  ||
+||__||
+  OKC
+</pre><div class='team-text'><p class='team-name'>Oklahoma City Thunder (OKC)<span class='record'>18-1</span></p></div></div><p class='score'>0</p></div></div></article><article class='game-card'><header><p class='game-id'>Game ID: 0022500076</p><p class='status'>9:30 pm ET</p><p class='status-extra'>Tip-off: 2025-11-28T21:30:00Z</p></header><div class='teams'><div class='team away'><div class='team-meta'><pre class='logo' aria-label='SAS logo'>
+|\_/|
+|_ _|
+ /_\
+|_|_|
+ SAS
+</pre><div class='team-text'><p class='team-name'>San Antonio Spurs (SAS)<span class='record'>12-5</span></p></div></div><p class='score'>0</p></div><div class='team home'><div class='team-meta'><pre class='logo' aria-label='DEN logo'>
+ /\  /\
+/  \/  \
+\      /
+ \____/
+  DEN
+</pre><div class='team-text'><p class='team-name'>Denver Nuggets (DEN)<span class='record'>13-4</span></p></div></div><p class='score'>0</p></div></div></article><article class='game-card'><header><p class='game-id'>Game ID: 0022500077</p><p class='status'>9:30 pm ET</p><p class='status-extra'>Tip-off: 2025-11-28T21:30:00Z</p></header><div class='teams'><div class='team away'><div class='team-meta'><pre class='logo' aria-label='SAC logo'>
+ /\_/\
+( o.o )
+ &gt; ^ &lt;
+  SAC
+</pre><div class='team-text'><p class='team-name'>Sacramento Kings (SAC)<span class='record'>5-14</span></p></div></div><p class='score'>0</p></div><div class='team home'><div class='team-meta'><pre class='logo' aria-label='UTA logo'>
+ /\
+|  |
+|  |
+|  |
+ \__\
+  UTA
+</pre><div class='team-text'><p class='team-name'>Utah Jazz (UTA)<span class='record'>5-12</span></p></div></div><p class='score'>0</p></div></div></article><article class='game-card'><header><p class='game-id'>Game ID: 0022500078</p><p class='status'>10:00 pm ET</p><p class='status-extra'>Tip-off: 2025-11-28T22:00:00Z</p></header><div class='teams'><div class='team away'><div class='team-meta'><pre class='logo' aria-label='DAL logo'>
+  /\
+ //\\
+//  \\
+\\  //
+ \\//
+  DAL
+</pre><div class='team-text'><p class='team-name'>Dallas Mavericks (DAL)<span class='record'>5-14</span></p></div></div><p class='score'>0</p></div><div class='team home'><div class='team-meta'><pre class='logo' aria-label='LAL logo'>
+|\    /
+| \  /
+|  \/
+|  /\
+| /  \
+|/    \
+ LAL
+</pre><div class='team-text'><p class='team-name'>Los Angeles Lakers (LAL)<span class='record'>13-4</span></p></div></div><p class='score'>0</p></div></div></article><article class='game-card'><header><p class='game-id'>Game ID: 0022500079</p><p class='status'>10:00 pm ET</p><p class='status-extra'>Tip-off: 2025-11-28T22:00:00Z</p></header><div class='teams'><div class='team away'><div class='team-meta'><pre class='logo' aria-label='MEM logo'>
+ /\_/\
+( o.o )
+ &gt; ^ &lt;
+ /   \
+ MEM
+</pre><div class='team-text'><p class='team-name'>Memphis Grizzlies (MEM)<span class='record'>7-12</span></p></div></div><p class='score'>0</p></div><div class='team home'><div class='team-meta'><pre class='logo' aria-label='LAC logo'>
+|\  |\
+| \ | \
+|  \|  \
+|  /|  /
+| / | /
+|/  |/
+ LAC
+</pre><div class='team-text'><p class='team-name'>LA Clippers (LAC)<span class='record'>5-13</span></p></div></div><p class='score'>0</p></div></div></article>
+  </main>
+  <footer>
+    <p>Data from nba_api live scoreboard.</p>
+  </footer>
+</body>
+</html>
